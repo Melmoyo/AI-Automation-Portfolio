@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Engineer Portfolio</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f4f4f4;
+      }
+
+      header {
+        background: #111827;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 900px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .project {
+        margin-bottom: 40px;
+      }
+
+      .project h2 {
+        margin: 0;
+        color: #111827;
+      }
+
+      .tools {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 10px;
+      }
+
+      .screenshots-container {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 10px 0;
+      }
+
+      .screenshots-container img {
+        height: 150px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .screenshots-container img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Zoom modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+      }
+
+      .modal.close-area {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>AI Automation Portfolio</h1>
+      <h2 style="margin-top: 10px; font-weight: normal; font-size: 20px">
+        Melissa Msayinwa
+      </h2>
+      <p
+        style="
+          max-width: 700px;
+          margin: 10px auto 0;
+          font-size: 15px;
+          color: #d1d5db;
+        "
+      >
+        I am an aspiring AI Engineer passionate about building automations,
+        integrating APIs, and creating intelligent workflows using tools like
+        n8n, Microsoft AI Foundry, and LLM-powered agents.
+      </p>
+    </header>
+
+    <div class="container">
+      <div class="project">
+        <h2>Project 1: Automated Booking System</h2>
+        <p class="tools">
+          <strong>Tools Used:</strong> n8n, Microsoft Copilot Studio
+        </p>
+        <p>
+          Automated a booking system for my local healthcare centre.Using
+          Microsoft Copilot Studio for the form and n8n for email confirmation
+          and calendar logging.
+        </p>
+
+        <div class="screenshots-container">
+          <img
+            src="images/email-database-event-workflow.png"
+            alt="Send Conformation Email Workflow"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/Error Workflow.png"
+            alt="Error Workflow"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/Calendar entry.png"
+            alt="Calendar Entry"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/booking.png"
+            alt="Booking Form"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/available times.png"
+            alt="Available Times"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/email-received.png"
+            alt="Booking Form"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/response.png"
+            alt="Booking Form"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/Slack.png"
+            alt="Slack"
+            onclick="openModal(this.src)"
+          />
+        </div>
+      </div>
+
+      <div class="project">
+        <h2>Project 2: AI-powered Equity Research Analyst</h2>
+        <p class="tools">
+          <strong>Tools Used:</strong> LLMs, API Data Retrieval, Charts,
+          QuickChart, Automation, HTTP Requests,Prompt Engineering,Supabase
+        </p>
+        <p>
+          An equity reaserch analyst that leverages LLMs to gather financial
+          data from various APIs, generate insights, and create visual charts
+          for investment analysis.
+        </p>
+
+        <div class="screenshots-container">
+          <img
+            src="images/Workflow.png"
+            alt="Workflow1"
+            onclick="openModal(this.src)"
+          />
+           <img
+            src="images/Supabase1.1.png"
+            alt="Supabase"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/Supabase2.png"
+            alt="Supabase"
+            onclick="openModal(this.src)"
+          />
+        
+          <img
+            src="images/Error Workflow (2).png"
+            alt="Error Workflow"
+            onclick="openModal(this.src)"
+          />
+          <img
+            src="images/Screenshot 2025-12-11 054204.png"
+            alt="Upload SEC Filings Workflow"
+            onclick="openModal(this.src)"
+          />
+        </div>
+      </div>
+
+      <div class="project">
+        <h2>Project 3: Customer Service FAQ Agent</h2>
+        <p class="tools"><strong>Tools Used:</strong> Microsoft AI Foundry</p>
+        <p>
+          Customer Service FAQ Agent that utilizes PDF FAQ Knowledge base  to
+          answer frequently asked questions from customers, improving response.
+        </p>
+
+        <div class="screenshots-container">
+          <img src="images/Agents.png" alt="The agents" onclick="openModal(this.src)" />
+          <img src="images/Knowledge base.png" alt="Knowledge base" onclick="openModal(this.src)" />
+          <img src="images/agent_connections.png" alt="Agent connections" onclick="openModal(this.src)" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for zoom -->
+    <div class="modal" id="imageModal" onclick="closeModal()">
+      <img id="modalImage" />
+    </div>
+
+    <script>
+      function openModal(src) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        modal.style.display = "flex";
+        modalImg.src = src;
+      }
+
+      function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+      }
+    </script>
+    <!-- Contact Me Section -->
+    <div class="container" style="margin-bottom: 40px">
+      <h2 style="color: #111827; margin-top: 0">Contact Me</h2>
+      <div
+        style="
+          background: #f9fafb;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        "
+      >
+        <p style="margin: 0 0 10px; font-size: 16px">
+          Feel free to reach out for collaborations, opportunities, or
+          questions!
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:">melmoyo62@gmail.com</a></strong>
+        </p>
+        <p>
+          <strong>LinkedIn:</strong>
+          <a href="https:linkedin.com/in/melissa-msayinwa" target="_blank"
+            > LinkedIn Profile</a
+          >
+        </p>
+        <p>
+          <strong>GitHub:</strong>
+          <a
+            href="https://github.com/Melmoyo/AI-Automation-Portfolio"
+            target="_blank"
+            > GitHub</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
